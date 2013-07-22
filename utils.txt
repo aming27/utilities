@@ -1,2 +1,21 @@
 #scanning systems for SUID and SGID binaries
 find / \( -perm -4000 -o -perm -2000 \) -type f -exec ls -la {} \;
+
+##buscar correo en color dentro de un log grande
+tail -f /var/log/zimbra.log | grep "xxx@example.com" --color
+
+## Web para saber si tu server está actuando como un proxy
+http://www.ip-adress.com/Proxy_Checker/
+
+##copia entre máquinas con scp
+scp backup.tar.gz srv2.miempresa.com:/tmp
+
+##controlando cola Zimbra
+qshape -s deferred ( para los remitentes )
+qshape  deferred ( para los destinatarios )
+
+##La siguiente linea de comandos obtiene todas las direcciones de correo que aparecen dentro del log de Zimbra o cualquier otro archivo de log.
+sed -n -e '/postfix\/smtp\[.*status=sent/s/^.*to=<\([^>]*\).*$/\1/p' /var/log/zimbra.log | sort -u
+
+## descomprimir tar
+tar -xzvf file.tar.gz
