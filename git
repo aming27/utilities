@@ -1,0 +1,32 @@
+# Install git and setup up a machine
+sudo apt-get install -y git-core
+git clone https://github.com/startup-class/setup.git
+./setup/setup.sh
+
+# Clone via SSH from github.
+# Cloning over SSH allows you to push/pull changes.
+git clone git@github.com:$USERNAME/bitstarter.git
+git config --global user.name $USERNAME
+git config --global user.email $EMAIL
+
+# Create a development branch and push it to github
+# The -b flag creates a new branch (http://git-scm.com/book/ch3-2.html)
+# The -u sets that branch to track remote changes (http://goo.gl/sQ6OI)
+git checkout -b develop
+git branch
+git push -u origin develop
+
+#Create heroku apps
+heroku apps:create $USERNAME-bitstarter-s-mooc --remote staging-heroku
+heroku apps:create $USERNAME-bitstarter-mooc --remote production-heroku
+
+#Change the branch and commit 
+git checkout develop
+git branch
+git commit -a -m "some thing "
+git push origin develop
+
+git branch
+git checkout staging # not checkout -b, because branch already exists
+git merge develop # merge changes from develop into staging.
+git push staging-heroku staging:master
