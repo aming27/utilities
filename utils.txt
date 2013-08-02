@@ -4,7 +4,7 @@ find / \( -perm -4000 -o -perm -2000 \) -type f -exec ls -la {} \;
 ##buscar correo en color dentro de un log grande
 tail -f /var/log/zimbra.log | grep "xxx@example.com" --color
 
-## Web para saber si tu server está actuando como un proxy
+## Are you a proxy?
 http://www.ip-adress.com/Proxy_Checker/
 
 ##copia entre máquinas con scp
