@@ -19,6 +19,11 @@ sed -n -e '/postfix\/smtp\[.*status=sent/s/^.*to=<\([^>]*\).*$/\1/p' /var/log/zi
 
 ## descomprimir tar
 tar -xzvf file.tar.gz
+## comprimir tar
+tar -czvf paquete.tar.gz directorio/
+
+## UUID disks
+ls -l /dev/disk/by-uuid
 
 ## Command dig; examples
 dig example.com
