@@ -22,6 +22,10 @@ tar -xzvf file.tar.gz
 ## comprimir tar
 tar -czvf paquete.tar.gz directorio/
 
+# archivos gz
+Comprimir: gzip -9 index.php
+Descomprimir: gzip -d index.php.gz
+
 ## UUID disks
 ls -l /dev/disk/by-uuid
 
