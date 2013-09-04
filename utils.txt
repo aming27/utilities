@@ -11,6 +11,9 @@ Backup:
 Restore:
 --- dd if=~/mbr.txt of=/dev/hda1 count=1 bs=512
 
+#Backup partitions Linux
+dd if=/dev/hdx of=/dev/hyd
+
 ##buscar correo en color dentro de un log grande
 tail -f /var/log/zimbra.log | grep "xxx@example.com" --color
 
