@@ -14,7 +14,7 @@ Restore:
 #Backup partitions Linux
 dd if=/dev/hdx of=/dev/hyd
 
-#Use dpkg
+#Use dpkg command
 --configure package ( Configure an unpacked package. This involves setup of configuration files )
 --purge ( Remove everything for package)
 --unpack package_file ( unpack but not install )
@@ -24,7 +24,9 @@ dd if=/dev/hdx of=/dev/hyd
 -r (remove everything except configuration files for package
 -S search_pattern ( Search for a filename matching search_pattern from installed packages)
 
-
+# Use history command 
+#See the most commands you use 
+history|awk '{print $2}'|awk 'BEGIN {FS="|"} {print $1}'|sort|uniq -c|sort -rn|head -10
 
 ##buscar correo en color dentro de un log grande
 tail -f /var/log/zimbra.log | grep "xxx@example.com" --color
