@@ -27,6 +27,8 @@ dd if=/dev/hdx of=/dev/hyd
 # Use history command 
 #See the most commands you use 
 history|awk '{print $2}'|awk 'BEGIN {FS="|"} {print $1}'|sort|uniq -c|sort -rn|head -10
+#Useful way to sort all processes on the system by resident size
+ps aux | sort -k 6 -n 
 
 ##buscar correo en color dentro de un log grande
 tail -f /var/log/zimbra.log | grep "xxx@example.com" --color
