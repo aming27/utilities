@@ -66,6 +66,23 @@ dig example.com
 dig @google.es example.com
 dig +trace example.com ( permite ver los saltos hasta llegar al servidor autoritativo )
 
+## Listening ports
+
+lsof -i:"X" ( X is the number of port )
+
+##iptables
+#Listar reglas
+iptables -L
+#Listar reglas y numeros de paquetes interceptados
+iptables -L -nv
+#Limpiar reglas
+iptables -F
+#Denegar tráfico provienente de localhost
+iptables -A INPUT -p ICMP -s 127.0.0.1 -j DROP
+#Permitir tráfico ssh
+sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT
+
+
 ## learning PHP with OOP ( video )
 https://www.youtube.com/watch?v=RBhtPO-aLzA
 
