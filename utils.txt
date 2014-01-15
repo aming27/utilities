@@ -33,6 +33,9 @@ ps aux | sort -k 6 -n
 ##buscar correo en color dentro de un log grande
 tail -f /var/log/zimbra.log | grep "xxx@example.com" --color
 
+## ver usuarios haciendo login
+tail -f zimbra.log | grep "sasl_username"
+
 ## Selecciona las lineas que no cumplan con el patrón establecido
 grep -v "palabra" fichero.txt
 
